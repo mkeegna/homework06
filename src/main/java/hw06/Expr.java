@@ -35,9 +35,19 @@ record Expr(String text) {
                 continue;
             }
 
-            // TODO:
-            // if (ch.equals(")")) {
-            //   ...
+            
+            if (ch.equals(")")) {
+                
+                var one = stack.pop();
+                var operator = stack.pop();
+                var two = stack.pop();
+                var result = applyOp(one,operator,two);
+                stack.push(result);
+                
+                
+            }
+
+              
         }
 
         try {
